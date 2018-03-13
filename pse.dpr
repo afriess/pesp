@@ -128,6 +128,12 @@ begin
 //      res_stream.Free;
     end;
 
+    if PseFile is TPsePeFile then begin
+      Writeln('Characteristics');
+      Writeln('  ' + TPsePeFile(PseFile).GetCharacteristicsString);
+      Writeln;
+    end;
+
     mem_base := 0;
     mem_initsize := PseFile.GetInitHeapSize;
     mem_maxsize := PseFile.GetMaxHeapSize;
